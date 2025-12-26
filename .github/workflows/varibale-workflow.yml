@@ -13,7 +13,7 @@ env:
   DEFAULT_ENV: "qa"
 
 jobs:
-  first_job:    
+  varialble_demo_job:    
     runs-on: ubuntu-latest
     env:
       #scope of variable is only this job

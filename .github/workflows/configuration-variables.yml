@@ -12,9 +12,9 @@ env:
   GLOBAL_ENV: "qa"
 
 jobs:
-  first_job:    
+  repository_var_job:    
     runs-on: ubuntu-latest
     steps:
       - name: Set up variables
         run: |
-          echo "Hello..running project - $${{vars.project_id}} on env- $GLOBAL_ENV"
+          echo "Hello..running project - ${{vars.project_id}} on env- $GLOBAL_ENV"
