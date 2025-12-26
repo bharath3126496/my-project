@@ -20,5 +20,5 @@ jobs:
         #project_name, owner_name -> context variables
         run: |
           echo "Hello..running project - ${{vars.project_id}} on env- $GLOBAL_ENV"
-          echo "The project name is ${{vars.project_name}}" 
-          echo "The owner name is ${{vars.owner_name}}"
+          echo "The project name is ${{github.project_name}}" 
+          echo "The owner name is ${{github.owner_name}}"
