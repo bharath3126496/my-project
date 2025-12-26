@@ -9,14 +9,21 @@ on:
   workflow_dispatch:
 
 env:
+  #scope of variable is entire workflow
   DEFAULT_ENV: "qa"
 
 jobs:
   first_job:    
     runs-on: ubuntu-latest
-
+    env:
+      #scope of variable is only this job
+      JOB_ENV: "dev"
     steps:
 
       - name: Set up variables
+        env:
+          STEP_ENV: "stage"
         run: |
-          echo "Hello..running on env- ${{ env.DEFAULT_ENV }}"
+          echo "Hello..running on env- $DEFAULT_ENV"
+          echo "Hello..running on env- ${{ env.JOB_ENV }}"
+          echo "Hello..running on env- ${{ env.STEP_ENV }}"
