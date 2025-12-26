@@ -1,0 +1,26 @@
+name: User input workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+    inputs:
+      number1:
+        description: 'Number 1'
+        required: true
+        default: '0'
+      number2:
+        description: 'Number 2'
+        required: true
+        default: '0'
+
+jobs:
+  add_numbers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add the two numbers
+        run: |
+          echo "Sum is $(( ${{ inputs.number1 }} + ${{ inputs.number2 }} ))"

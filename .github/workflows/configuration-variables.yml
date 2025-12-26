@@ -20,5 +20,5 @@ jobs:
         #repository, triggering_actor -> context variables
         run: |
           echo "Hello..running project - ${{vars.project_id}} on env- $GLOBAL_ENV"
-          echo "The project name is ${{github.repository}}" 
-          echo "The owner name is ${{github.triggering_actor}}"
+          echo "Repo name : ${{github.repository}}" 
+          echo "Triggered by ${{github.triggering_actor}}"
