@@ -1,0 +1,20 @@
+name: Config varibale Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:    
+
+env:
+  GLOBAL_ENV: "qa"
+
+jobs:
+  first_job:    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up variables
+        run: |
+          echo "Hello..running project - $${{vars.project_id}} on env- $GLOBAL_ENV"
