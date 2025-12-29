@@ -1,0 +1,8 @@
+name: reusable test workflow
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  calling-reusable-test:
+    uses: ./.github/workflows/variable-workflow.yml

@@ -18,4 +18,4 @@ jobs:
     steps:
       - name: Add the two numbers
         run: |
-          echo "Sum is $(( ${{ inputs.number1 }} + ${{ inputs.number2 }} ))"
+          echo "Sum is $(( ${{ inputs.number1 }} + ${{ inputs.number2 }} ))"        

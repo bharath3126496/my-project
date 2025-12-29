@@ -7,6 +7,7 @@ on:
     branches: [ "main" ]
 
   workflow_dispatch:
+  workflow_call:
 
 env:
   #scope of variable is entire workflow
@@ -27,3 +28,4 @@ jobs:
           echo "Hello..running on env- $DEFAULT_ENV"
           echo "Hello..running on env- ${{ env.JOB_ENV }}"
           echo "Hello..running on env- ${{ env.STEP_ENV }}"
+     
