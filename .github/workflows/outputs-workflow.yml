@@ -1,0 +1,19 @@
+name: outputs demo workflow
+
+on:
+  workflow_dispatch:
+
+jobs: 
+    outputs_demo_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Set up outputs
+              id: output_step
+              run: |
+                echo "output1=Hello from output 1" >> $GITHUB_OUTPUT
+                echo "output2=Hello from output 2" >> $GITHUB_OUTPUT 
+
+            - name: Use outputs
+              run: |
+                echo "Output 1 is: ${{ steps.output_step.outputs.output1 }}"
+                echo "Output 2 is: ${{ steps.output_step.outputs.output2 }}"
